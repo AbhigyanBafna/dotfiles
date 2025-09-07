@@ -116,3 +116,5 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 alias cursor="open -a Cursor"
 
+
+. "$HOME/.local/bin/env"

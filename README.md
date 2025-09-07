@@ -19,3 +19,4 @@ cd ~/.dotfiles
 3. brew -> Install Homebrew.
 4. cursor -> IDE of choice.
 5. iterm2 -> Terminal of choice.
+6. uv -> Fast python alt for pip.

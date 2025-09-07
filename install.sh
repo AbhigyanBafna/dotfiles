@@ -6,16 +6,16 @@ DOTFILES_DIR="$HOME/dotfiles"
 echo "🔗 Creating symlinks for dotfiles..."
 
 # List of files/folders to symlink
-FILES=(.zshrc .p10k.zsh .config/iterm2)
+FILES=(.zshrc .p10k.zsh .gitconfig .config/iterm2)
 
 for file in "${FILES[@]}"; do
   TARGET="$HOME/$file"
   SOURCE="$DOTFILES_DIR/$file"
 
-  # Back up existing file/folder before creating symlink
-  if [ -e "$TARGET" ] || [ -L "$TARGET" ]; then
-    echo "💾 Backing up existing $file"
-    mv "$TARGET" "$BACKUP_DIR/"
+  # Check if file already exists
+  if [ -e "$TARGET" ]; then
+    echo "⚠️  $file already exists, skipping..."
+    continue
   fi
 
   # Create parent directories if needed
